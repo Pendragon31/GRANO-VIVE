@@ -1,0 +1,1 @@
+const fs=require('fs');const url=process.env.VITE_SUPABASE_URL||'';const key=process.env.VITE_SUPABASE_PUBLISHABLE_KEY||'';if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(url)||!key.startsWith('sb_publishable_')){console.warn('Supabase public connection not configured');}fs.writeFileSync('config.js','window.GRANO_VIVE_CONFIG='+JSON.stringify({url,key})+';');
